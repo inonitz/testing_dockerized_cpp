@@ -1,0 +1,18 @@
+{
+    "clangd.path": "${env:VSCodeClangdAbsPath}",
+    "clangd.arguments": [
+        "--compile-commands-dir=${workspaceFolder}/.vscode/compile_commands",
+        "--query-driver=${env:VSCodeClangdQueryDriverAbsPath}",
+        "--background-index",
+        "--pch-storage=memory",
+        "-j=16"
+        // "-pretty",
+        // "--log=verbose",
+    ],
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    }
+}

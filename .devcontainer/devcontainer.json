@@ -1,0 +1,46 @@
+// {
+//   "image": "test_cpp_env:latest",
+//   "runArgs": [
+//     "--cap-add=SYS_PTRACE",
+//     "--security-opt",
+//     "seccomp=unconfined"
+//   ],
+//   "customizations": {
+//     "vscode": {
+//       "extensions": [
+//         "llvm-vs-code-extensions.vscode-clangd",
+//         "vadimcn.vscode-lldb",
+//         "xaver.clang-format",
+//         "evondev.indent-rainbow-palettes"
+//       ]
+//     }
+//   },
+//   "workspaceMount": "source=${localWorkspaceFolder},target=test_cpp_env/,type=bind",
+//   "workspaceFolder": "test_cpp_env",
+//   "onCreateCommand": "git config --global --add safe.directory test_cpp_env"
+// }
+
+
+{
+  "image": "test_cpp_env:latest",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+  "runArgs": [
+    "--cap-add=SYS_PTRACE",
+    "--security-opt",
+    "seccomp=unconfined"
+  ],
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "llvm-vs-code-extensions.vscode-clangd",
+        "vadimcn.vscode-lldb",
+        "xaver.clang-format",
+        "evondev.indent-rainbow-palettes"
+      ]
+    }
+  }
+
+}
